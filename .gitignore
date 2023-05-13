@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Embedded Database ###
+/src/main/resources/lotusdb.mv.db
+/src/main/resources/lotusdb.trace.db

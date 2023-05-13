@@ -1,21 +1,45 @@
 package com.ram.dev.lotusapp.settings;
 
-import java.util.Date;
+import java.sql.Date;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Component
-@Scope("prototype")
+@Entity
+@Table(name = "TBL_ACCOUNTS")
 public class Accounts {
-	private String name = "";
-	private String description = "";
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@Column(name = "name", nullable = false)
+	private String name;
+	
+	@Column(name = "description")
+	private String description;
+	
+	@Column(name = "startingBalance")
 	private float startingBalance;
-	private String currency = "";
+	
+	@Column(name = "currency", nullable = false)
+	private String currency;
+	
+	@Column(name = "loanAmount")
 	private float loanAmount;
+	
+	@Column(name = "creditLimit")
 	private float creditLimit;
-	private Date statementDate = new Date();
-	private Date billDate = new Date();
+	
+	@Column(name = "statementDate")
+	private Date statementDate;
+	
+	@Column(name = "billDate")
+	private Date billDate;
+	
 	@Override
 	public String toString() {
 		return "AccountsCardsBean [name=" + name + ", description=" + description + ", startingBalance="

@@ -1,0 +1,2 @@
+INSERT INTO TBL_ACCOUNTS (id, name,currency) VALUES (1, 'USA','US');
+INSERT INTO TBL_TRANSACTION (id, type) VALUES (2, 'France');

@@ -2,23 +2,52 @@ package com.ram.dev.lotusapp.transactions;
 
 import java.sql.Date;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import org.apache.el.parser.AstFalse;
 
-@Component
-@Scope("prototype")
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "TBL_TRANSACTION")
 public class Transaction {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name="date")
 	private Date date;
-	private String description = "";
-	private String type = "";
-	private String account = "";
-	private float amount = 0L;
-	private String currency= "";
-	private String category = "";
-	private String tags = "";
-	private float amountInDefaultCurrency = 0L;
-	private String monthYear = "";
+	
+	@Column(name="description")
+	private String description;
+	
+	@Column(name="type",nullable = false)
+	private String type;
+	
+	@Column(name="account")
+	private String account;
+	
+	@Column(name="amount")
+	private float amount;
+	
+	@Column(name="currency")
+	private String currency;
+	
+	@Column(name="category")
+	private String category;
+	
+	@Column(name="tags")
+	private String tags;
+	
+	@Column(name="amountInDefaultCurrency")
+	private float amountInDefaultCurrency;
+	
+	@Column(name="monthYear")
+	private String monthYear;
 
 	public Transaction(Long id, Date date, String description, String type, String account, float amount,
 			String currency, String category, String tags, float amountInDefaultCurrency, String monthYear) {
