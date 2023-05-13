@@ -1,56 +1,46 @@
 package com.ram.dev.lotusapp.reports;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ram.dev.lotusapp.settings.Accounts;
 import com.ram.dev.lotusapp.settings.Settings;
 
 @RestController
+@RequestMapping(path = "reports")
 public class ReportsDAO {
 
-	@RequestMapping(path="/settings/get",method = RequestMethod.GET)
-	public Settings getSettings(@RequestBody Settings settings) {
+	@GetMapping(path="/get")
+	public Settings getTransaction(@RequestBody Settings settings) {
 		//TODO
 		return settings;
 	}
 
-	@RequestMapping(path="/account/add",method = RequestMethod.POST)
-	public Accounts addAccount(@RequestBody Accounts accounts) {
+	@PostMapping(path="/add")
+	public Accounts addTransaction(@RequestBody Accounts accounts) {
 		//TODO
 		return accounts;
 	}
 	
-	@RequestMapping(path="/account/update",method = RequestMethod.POST)
-	public Accounts updateAccount(@RequestBody Accounts accounts) {
+	@PostMapping(path="/update")
+	public Accounts updateTransaction(@RequestBody Accounts accounts) {
 		//TODO
 		return accounts;
 	}
 	
-	@RequestMapping(path="/account/remove",method = RequestMethod.POST)
-	public Accounts removeAccount(@RequestBody Accounts accounts) {
+	@PostMapping(path="/remove")
+	public Accounts removeTransaction(@RequestBody Accounts accounts) {
 		//TODO
 		return accounts;
 	}
 	
-	@RequestMapping(path="/currency/add",method = RequestMethod.GET)
-	public String addCurrency(@RequestBody String currency) {
+	@PostMapping(path="/month/")
+	public String getMonthlyTransaction(@RequestBody String currency) {
 		//TODO
 		return "";
 	}
 	
-	@RequestMapping(path="/currency/remove",method = RequestMethod.GET)
-	public String removeCurrency(@RequestBody String currency) {
-		//TODO
-		return "";
-	}
-	
-	@RequestMapping(path="/currency/get/all",method = RequestMethod.GET)
-	public String getCurrencies() {
-		//TODO
-		return "";
-	}
-
 }
