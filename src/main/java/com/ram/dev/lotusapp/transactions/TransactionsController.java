@@ -6,33 +6,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ram.dev.lotusapp.settings.Accounts;
-import com.ram.dev.lotusapp.settings.Settings;
+import com.ram.dev.lotusapp.settings.Account;
+import com.ram.dev.lotusapp.settings.Currency;
 
 @RestController
 @RequestMapping(path = "/transactions")
 public class TransactionsController {
 
 	@GetMapping(path="/get")
-	public Settings getTransaction(@RequestBody Settings settings) {
+	public Currency getTransaction(@RequestBody Currency settings) {
 		//TODO
 		return settings;
 	}
 
 	@PostMapping(path="/add")
-	public Accounts addTransaction(@RequestBody Accounts accounts) {
+	public Account addTransaction(@RequestBody Account accounts) {
 		//TODO
 		return accounts;
 	}
 	
 	@PostMapping(path="/update")
-	public Accounts updateTransaction(@RequestBody Accounts accounts) {
+	public Account updateTransaction(@RequestBody Account accounts) {
 		//TODO
 		return accounts;
 	}
 	
 	@PostMapping(path="/remove")
-	public Accounts removeTransaction(@RequestBody Accounts accounts) {
+	public Account removeTransaction(@RequestBody Account accounts) {
 		//TODO
 		return accounts;
 	}
